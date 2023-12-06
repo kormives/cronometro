@@ -1,11 +1,12 @@
 import React from 'react';
-import './style.scss';
+import syle from './botao.module.scss';
 
-class Botao extends React.Component {
+class Botao extends React.Component<{ children: any, type?: 'button' | 'submit' | 'reset' | undefined; }> {
   render() {
+    const { type = 'button' } = this.props;
     return (
-      <button className='botao'>
-        Botao
+      <button type={type} className={syle.botao}>
+        {this.props.children}
       </button>
     );
   }
